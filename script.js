@@ -37,3 +37,7 @@ speechSynthesis.addEventListener("voiceschanged", populateVoices);
 voicesDropdown.addEventListener("change", setVoice); // set voice value as different options are selected
 
 options.forEach(option => option.addEventListener("change", setOption));
+
+speakButton.addEventListener("click", toggle);
+
+stopButton.addEventListener("click", () => toggle(false)); // or toggle.bind(null, false);
