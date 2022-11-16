@@ -15,4 +15,10 @@ function populateVoices() {
       .join("");
 }
 
+function setVoice(){
+  msg.voice = voices.find(voice => voice.name === this.value); // this is every option in the dropdown menu
+}
+
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
+
+voicesDropdown.addEventListener("change", setVoice); // set voice value as different options are selected
