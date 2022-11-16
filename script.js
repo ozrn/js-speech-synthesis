@@ -10,7 +10,9 @@ msg.text = document.querySelector("[name = 'text']").value;
 
 function populateVoices() {
   voices = this.getVoices();
-  console.log(voices);
+  voicesDropdown.innerHTML = voices
+      .map(voice => `<option value=${voice.name}>${voice.name} ${voice.lang}</option>`)
+      .join("");
 }
 
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
