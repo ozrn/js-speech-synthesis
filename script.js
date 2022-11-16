@@ -27,6 +27,13 @@ function toggle(startOver = true) {
   }
 }
 
+function setOption() {
+  msg[this.name] = this.value; //set what property changed, this.name to what changed, this.value
+  toggle();
+}
+
 speechSynthesis.addEventListener("voiceschanged", populateVoices);
 
 voicesDropdown.addEventListener("change", setVoice); // set voice value as different options are selected
+
+options.forEach(option => option.addEventListener("change", setOption));
